@@ -35,8 +35,29 @@ public class BmdbConsoleApp {
 					}
 					break;
 				case 3: 
+					// add movie
+					System.out.println("Enter details for new movie:");
+					String t = Console.getString("Movie Title: ");
+					int y = Console.getInt("Movie Year: ");
+					String r = Console.getString("Movie Rating: ");
+					String d = Console.getString("Movie Director: ");
+					m = new Movie(t,y,r,d);
+					if (movieDAO.add(m)) {
+						System.out.println("Movie successfully added!");
+					}
+					else {
+						System.out.println("Error adding movie.");
+					}
 					break;
-				case 4: 
+				case 4:
+					// delete movie
+					id = Console.getInt("Enter ID of movie to delete: ");
+					if (movieDAO.delete(id)) {
+						System.out.println("Successfully deleted movie with id: "+id);
+					}
+					else {
+						System.out.println("Error deleting movie");
+					}
 					break;
 				case 99: 
 					break;
