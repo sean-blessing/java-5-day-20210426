@@ -65,7 +65,11 @@ public class ArraysApp {
 			System.out.println(i);
 		}
 		
-		
+		// loop through the args array
+		System.out.println("There are "+args.length+" args:");
+		for (String s: args) {
+			System.out.println(s);
+		}
 		
 		
 		
